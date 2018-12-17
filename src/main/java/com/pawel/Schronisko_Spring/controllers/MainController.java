@@ -12,4 +12,21 @@ public class MainController {
     {
         return "mainPage";
     }
+
+//    @RequestMapping("/review")
+//    public String reviewPage(Model model)
+//    {
+//        return "review";
+//    }
+
+    @RequestMapping("/about")
+    public String aboutPage(){
+        return"about";
+    }
+
+    @RequestMapping("/contact")
+    public String contactPage()
+    {
+        return "contact";
+    }
 }
