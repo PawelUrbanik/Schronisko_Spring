@@ -38,7 +38,7 @@ public class DBAnimalRepository implements AnimalRepository {
     @Override
     @Transactional
     public void deleteAniaml(Integer id) {
-        manager.remove(id);
+        manager.remove(getAnimalById(id));
     }
 
     @PostConstruct

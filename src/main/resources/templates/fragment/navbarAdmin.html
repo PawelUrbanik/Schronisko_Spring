@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{css/styles.css}" rel="stylesheet" type="text/css">
+<link th:href="@{css/bootstrap.min.css}" type="text/css" rel="stylesheet">
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainmenu" aria-expanded="false">
+                <span class="sr-only">Przełącznik nawigacji</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" th:href="@{/mainPage}">
+                <strong>4</strong> łapy
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right mainmenu" id="mainmenu">
+            <ul class="nav navbar-nav">
+                <li><a th:href="@{/mainPage}">Strona główna</a></li>
+                <li><a th:href="@{/contact}">Kontakt(DU)</a></li>
+                <li><a th:href="@{/staff}">Pracownicy</a> </li>
+                <li><a th:href="@{/addAnimal}">Dodaj Zwierzę</a> </li>
+                <li><a th:href="@{/manage}" class="btn btn-default">Zarządzaj</a></li>
+                <li><a th:href="@{/review}" class="btn btn-default">Przeglądaj</a></li>
+                <li><a th:href="@{/messages}">Wiadomości</a> </li>
+                <!--<ul class="nav navbar-nav navbar-right">-->
+                <!--<c:choose>-->
+                <!--<c:when test="${not empty sessionScope.user}">-->
+                <!--<li><a href="${pageContext.request.contextPath}/logout"><span class="glyphicon glyphicon-user"></span> Wyloguj się</a></li>-->
+                <!--</c:when>-->
+                <!--<c:otherwise>-->
+                <!--<li><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-user"></span> Zaloguj się</a></li>-->
+                <!--</c:otherwise>-->
+                <!--</c:choose>-->
+                <!--</ul>-->
+            </ul>
+        </div>
+
+
+    </div>
+</nav>

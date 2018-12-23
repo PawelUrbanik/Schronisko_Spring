@@ -42,6 +42,6 @@ public class InMemoryAnimalRepository implements AnimalRepository {
 
     @Override
     public void deleteAniaml(Integer id) {
-        animals.remove(id);
+        animals.remove(getAnimalById(id));
     }
 }

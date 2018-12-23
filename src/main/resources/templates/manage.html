@@ -15,21 +15,21 @@
 
 <div th:include="@{fragment/navbarAdmin.html}"></div>
 
-    <div class="container" th:each="animal : ${animals}">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 main well">
-                <div class="blog-post">
-                    <h2 class="blog-post-title"><a href="/contactAnimal?animalId=${animal.animalId}" th:text="${animal.name}"> </a> </h2>
-                    <p class="blog-post-meta">Rodzaj:  <th:block th:text="${animal.animalType}"/></p>
-                    <p><img th:src="@{'../img/' + ${animal.getAnimalPhoto()}}"   alt="Kontak w sprawie tego zwierzęcia" class="thumbnail">Wiek: <th:block th:text="${animal.getAge()}"></th:block></p>
-                    <div>Płeć:<th:block th:text="${animal.getAnimalSex().toString()}"></th:block>
+<div class="container" th:each="animal : ${animals}">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 main well">
+            <div class="blog-post">
+                <h2 class="blog-post-title"><a href="/contactAnimal?animalId=${animal.animalId}" th:text="${animal.name}"> </a> </h2>
+                <p class="blog-post-meta">Rodzaj:  <th:block th:text="${animal.animalType}"/></p>
+                <p><img th:src="@{'../img/' + ${animal.getAnimalPhoto()}}"   alt="Kontak w sprawie tego zwierzęcia" class="thumbnail">Wiek: <th:block th:text="${animal.getAge()}"></th:block></p>
+                <div>Płeć:<th:block th:text="${animal.getAnimalSex().toString()}"></th:block>
                     <p>Opis: <th:block th:text="${animal.getDescription()}"><</th:block></p>
-                    <a href="/contactAnimal?animalId=${animal.animalId}" class="btn btn-default">Skontaktuj się i przygarnij</a>
+                    <a class="btn btn-danger" th:href="${'animal/delete/'+animal.getAnimalId()}">Usuń</a>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+</div>
 
 
 <div th:include="@{fragment/footer.html}"></div>

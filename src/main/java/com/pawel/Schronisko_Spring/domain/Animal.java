@@ -2,6 +2,8 @@ package com.pawel.Schronisko_Spring.domain;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -10,16 +12,27 @@ public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int animalId;
+
     @NotNull
+    @NotEmpty(message = "Wypełnij to pole")
     private String name;
+
     @NotNull
+    @NotEmpty(message = "Uzupełnij to pole")
     private String description;
+
     @NotNull
+    @Min(value = 1, message = "Zwierzę powinno być w wieku powyżej 0")
     private int age;
+
+    @NotNull(message = "Płeć nie może być pusta")
     @Enumerated(EnumType.ORDINAL)
     private AnimalSex animalSex;
+
+    @NotNull(message = "Typ nie może być pusty")
     @Enumerated(EnumType.STRING)
     private AnimalType animalType;
+
     private String animalPhoto;
 
     public Animal() {

@@ -23,8 +23,8 @@ public class Starter implements CommandLineRunner
     @Transactional
     public void run(String... args) throws Exception {
 
-        Animal animal1 = new Animal("Nazwa", "Opis", 2, AnimalSex.MAN, AnimalType.CAT, "Photo");
-        Animal animal2 = new Animal("Nazwa2", "Opis2", 21, AnimalSex.WOMAN, AnimalType.DOG, "Photo2");
+        Animal animal1 = new Animal("Nazwa", "Opis", 2, AnimalSex.MAN, AnimalType.CAT, "cat-2343448_640.jpg");
+        Animal animal2 = new Animal("Nazwa2", "Opis2", 21, AnimalSex.WOMAN, AnimalType.DOG, "cat-2641377_640.jpg");
         System.out.println(animal1);
         System.out.println(animal2);
         animalRepository.createAnimal(animal1);
